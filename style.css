@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-color: #fdfdfd;
+    --text-color: #00b3ff;
+    --text-color-subheading: #ffffff;
+    --nav-color: #146ef5;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: Poppins, sans-serif; /* Added a fallback font */
+    text-decoration: none;
+    
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+}
+
+body {
+    
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    /* color: var(--text-color); */
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover, nav a:active {
+    color: var(--text-color);
+    border-bottom: 3px solid var(--text-color);
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--nav-color);
+    display: none;
+}
+
+@media (max-width: 995px) {
+    #menu-icon {
+        display: block; /* Show the menu icon for smaller screens */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100px; /* Ensure this has a valid unit */
+        right: 0;
+        width: 40%;
+        border-left: 3px solid green;
+        border-bottom: 3px solid;
+        border-top-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: red;
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+    
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover, nav a:active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: white;
+        border-bottom: 3px solid var(--nav-color);
+    }
+
+    /* Adjustments for the home section */
+    .home {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: center; /* Center items */
+        gap: 4rem; /* Adjust gap as needed */
+    }
+
+    .home-img {
+        height: 200px; /* Adjust height for smaller screens */
+        width: 200px; /* Adjust width for smaller screens */
+    }
+
+    .home-content {
+        max-width: 90%; /* Allow more space for content */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .home-content h1{
+        font-size: 2rem;
+    }
+}
+
+
+/* ------------------------- SECTION 1 ------------------ */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-image: linear-gradient(rgba(19, 19, 20, 0.7), rgba(19, 19, 20, 0.7)), url(./imgs/background.png);
+    background-size: cover; /* Scale to cover the section */
+    background-repeat: no-repeat;
+    background-position: center; /* Center the image */
+}
+
+
+.home-content {
+    max-width: 600px; /* Optional: Control the width of the text */
+}
+
+span {
+    color: var(--text-color);
+    font-family: "Work Sans", sans-serif;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content h1{
+    font-size: 2rem;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    color: var(--text-color-subheading);
+}
+
+
+/* ------------------------- SECTION 1 HOMEPAGE IMAGE ------------------ */
+.home-img {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 400px; /* Fixed height for consistent layout */
+    width: 400px; /* Fixed width for image */
+}
+
+.home-img img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.home-img img:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------- SECTION 1 HOMEPAGE SOCIAL ICONS ------------------ */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid var(--nav-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.social-icons a:hover {
+    color: white;
+    transform: scale(1.3) translateY(-5px);
+    background-color: var(--nav-color);
+    box-shadow: 0 0 25px var(--nav-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--nav-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale3d(1.03);
+    background-color: var(--text-color);
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--nav-color);
+}
+
+/* ------------------ SECTION 2 ------------------------------ */
+
+.aboutme {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center align */
+    align-items: center; /* Vertically center */
+    gap: 8rem; /* Space between image and content */
+    background-color: #f7f7f7;
+    flex-direction: row; /* Ensure text and image are in rows */
+    padding: 5rem 9%; /* Add more padding for spacing */
+    
+}
+
+.aboutme-img {
+    height: 400px; /* Fixed height for consistent layout */
+    width: 400px; /* Fixed width for image */
+}
+
+.aboutme-img img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 0 25px solid #b74b4b; /* Shadow effect */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.aboutme-img img:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.aboutme-content {
+    max-width: 600px; /* Optional: Control the width of the text */
+}
+
+.aboutme-content h2 {
+    font-size: 6rem; /* Set the font size for the heading */
+    margin-bottom: 1rem; /* Spacing below the heading */
+    font-weight: 700; /* Bold weight */
+    text-align: center; /* Center align the heading */
+    color: #042638;
+}
+
+.aboutme-content p {
+    font-size: 1.5rem; /* Font size for the paragraph */
+    color: black; /* Use the variable for color */
+}
+
+/* For screens smaller than 991px (tablets and medium devices) */
+@media (max-width: 995px) {
+    .aboutme {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        gap: 4rem; /* Adjust gap */
+        text-align: center;
+    }
+    .aboutme-content {
+        max-width: 90%;
+    }
+}
+
+/* For screens smaller than 768px (large phones) */
+@media (max-width: 768px) {
+    .aboutme {
+        padding: 8rem 5%; /* Less padding for mobile */
+        gap: 4rem; /* Reduce gap between image and text */
+    }
+
+    .aboutme-img {
+        height: 250px;
+        width: 250px; /* Further reduce image size */
+    }
+
+    .aboutme-content h2 {
+        margin-top: 5rem;
+        font-size: 4rem; /* Smaller heading for mobile */
+    }
+
+    .aboutme-content p {
+        font-size: 1.5rem; /* Slightly smaller text for mobile */
+    }
+}
+
+/* For screens smaller than 600px (small phones) */
+@media (max-width: 600px) {
+    .aboutme {
+        padding: 6rem 3%; /* Minimal padding for very small screens */
+    }
+
+    .aboutme-img {
+        height: 200px;
+        width: 200px; /* Smaller image */
+    }
+
+    .aboutme-content h2 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .aboutme-content p {
+        font-size: 1.2rem; /* Smaller text */
+    }
+}
+
+/* ------------------ SECTION 3 ------------------------------ */
+.skills{
+    background-color: #f7f7f7;
+}
+
+.skills h2.heading {
+    font-size: 10rem; /* Balanced font size */
+    color: #000000; /* Clean and modern color */
+    margin-bottom: 2rem; /* Moderate spacing */
+    font-weight: bolder; /* Slightly bold, but not too heavy */
+    text-transform: capitalize; /* Capitalizes the first letter only */
+    letter-spacing: 0.1rem; /* Minimal spacing for neatness */
+    text-align: center; /* Center-align for a polished look */
+}
+
+.skills h2.heading::after {
+    content: ''; /* Decorative line */
+    display: block;
+    width: 6rem; /* Shorter width for a subtle effect */
+    height: 0.3rem; /* Thin line */
+    background-color: #00b3ff; 
+    margin: 1rem auto 0 auto; 
+    border-radius: 2px; 
+}
+
+
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.skills-box{
+    background-color: var(--nav-color);
+    height: 300px;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.skills-box:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    transform: scale(1.03);
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.skills-box .skills-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 200px;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+}
+
+.skills-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 200px;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+}
+
+.skills-info i {
+    font-size: 4rem; /* Increased icon size for better visibility */
+    margin-top: 1rem; /* Added space below the icon */
+}
+
+.skills-info h4 {
+    font-size: 1.7rem; /* Adjusted font size for the label */
+    font-weight: 500;
+    margin-bottom: 1rem; /* Space below the label */
+}
+
+.skills-info p {
+    font-weight: 300;
+    font-size: 1.6rem;
+    max-height: 100px;
+    margin: auto;
+}
+
+@media (max-width: 991px) {
+    section {
+        padding: 10rem 3% 2rem;
+    }
+    .skills {
+        padding-bottom: 7rem;
+    }
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .skills-box {
+        height: auto;
+    }
+}
+
+@media (max-width: 895px) {
+    .skills h2 {
+        margin-bottom: 3rem;
+        text-align: center; /* Center the heading */
+    }
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+    .skills-box {
+        padding: 2rem; /* Adjust padding for smaller screens */
+        height: auto; /* Allow flexible height */
+    }
+    .skills-info {
+        padding: 3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+    .skills h2.heading {
+        font-size: 5rem;
+    }
+    .skills-box {
+        padding: 1.5rem; /* Reduce padding further for very small screens */
+    }
+    .skills-info {
+        padding: 2em; /* Smaller padding */
+    }
+}
+
+
+
